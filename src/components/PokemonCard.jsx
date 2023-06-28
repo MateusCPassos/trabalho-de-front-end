@@ -6,7 +6,7 @@ const PokemonCard = ({ name, imageUrl, types, onClick }) => {
     <div className="pokemonCard" onClick={onClick}>
       <h3>{name}</h3>
       <img src={imageUrl} alt={name} />
-      <p>Tipos: {types.join(', ')}</p>
+      {/* <p>Tipos: {types.join(', ')}</p> */}
     </div>
   );
 };
