@@ -28,13 +28,11 @@ const ListagemPage = () => {
     setSelectedPokemon(pokemon);
   };
 
-
-
   return (
     <div>
       <h1 className="centered-title">Lista de Pokémon</h1>
       <div className="pokemon-list">
-        {(pokemonsData.results) ?
+        {pokemonsData.results ? (
           <>
             {pokemonsData.results.map((pokemon) => (
               <Link to={"/" + pokemon.name} key={pokemon.name}>
@@ -43,16 +41,18 @@ const ListagemPage = () => {
                   imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`}
                   types={['grass', 'poison']}
                   onClick={() => handlePokemonClick(pokemon)}
-
+                  className="pokemon-card"
                 />
               </Link>
             ))}
-          </> : ""
-        }
+          </>
+        ) : null}
       </div>
 
-      <button onClick={() => setPage(pokemonsData.previous)}>anterior</button>
-      <button onClick={() => setPage(pokemonsData.next)}>proxima</button>
+      <div className="button-container">
+        <button onClick={() => setPage(pokemonsData.previous)}>anterior</button>
+        <button onClick={() => setPage(pokemonsData.next)}>proxima</button>
+      </div>
     </div>
   );
 };
