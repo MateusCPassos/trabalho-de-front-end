@@ -29,7 +29,7 @@ const ListagemPage = () => {
   };
 
   return (
-    <div>
+    <div className="listagem-page">
       <h1 className="centered-title">Lista de Pokémon</h1>
       <div className="pokemon-list">
         {pokemonsData.results ? (
